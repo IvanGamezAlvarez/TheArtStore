@@ -1,16 +1,23 @@
-import { useState } from "react";
-import NavBar from "./Components/NavBar";
-import ItemListContainer from "./Components/ItemListContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Components/Home";
+import Layout from "./Components/Layout";
+import Catalog from "./Components/Catalog";
+import Paint from "./Components/Paint";
+import Error from "./Components/Error";
 
 function App() {
-  const [OffertMessage, SetOffertMessage] = useState(
-    "2X1 en la Primera compra"
-  );
-
   return (
     <>
-      <NavBar />
-      <ItemListContainer OffertMessage={OffertMessage} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />}></Route>
+            <Route path="/Catalog" element={<Catalog />}></Route>
+            <Route path="/Catalog/:id" element={<Paint />}></Route>
+            <Route path="/*" element={<Error />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
