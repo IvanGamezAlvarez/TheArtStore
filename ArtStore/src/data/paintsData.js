@@ -1,6 +1,6 @@
-const Paints = [
+const paints = [
   {
-    id: 1,
+    id: 0,
     title: "Mona Lisa",
     author: "Leonardo da Vinci",
     imageUrl:
@@ -11,18 +11,18 @@ const Paints = [
       "Portrait of Lisa Gherardini, famous for her enigmatic smile and considered one of the most iconic Renaissance works.",
   },
   {
-    id: 2,
+    id: 1,
     title: "The Starry Night",
     author: "Vincent van Gogh",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
     artStyle: "Post-Impressionism",
     value: "$100,000,000",
     description:
       "A night landscape with swirling skies and a calm village, expressing Van Gogh’s emotional view of the world.",
   },
   {
-    id: 3,
+    id: 2,
     title: "The Scream",
     author: "Edvard Munch",
     imageUrl:
@@ -33,7 +33,7 @@ const Paints = [
       "An androgynous figure screaming beneath a blood-red sky, symbolizing modern existential anxiety.",
   },
   {
-    id: 4,
+    id: 3,
     title: "Girl with a Pearl Earring",
     author: "Johannes Vermeer",
     imageUrl:
@@ -44,7 +44,7 @@ const Paints = [
       "A portrait of a young girl with a pearl earring, known for its lighting and mysterious expression.",
   },
   {
-    id: 5,
+    id: 4,
     title: "Las Meninas",
     author: "Diego Velázquez",
     imageUrl:
@@ -55,7 +55,7 @@ const Paints = [
       "A complex court scene that plays with perspective and includes the artist himself within the composition.",
   },
   {
-    id: 6,
+    id: 5,
     title: "The Persistence of Memory",
     author: "Salvador Dalí",
     imageUrl:
@@ -66,7 +66,7 @@ const Paints = [
       "A dreamlike landscape with melting clocks, exploring the fluidity of time and memory.",
   },
   {
-    id: 7,
+    id: 6,
     title: "The Birth of Venus",
     author: "Sandro Botticelli",
     imageUrl:
@@ -77,7 +77,7 @@ const Paints = [
       "Mythological scene of Venus emerging from the sea on a shell, representing idealized beauty.",
   },
   {
-    id: 8,
+    id: 7,
     title: "The Creation of Adam",
     author: "Michelangelo",
     imageUrl:
@@ -88,7 +88,7 @@ const Paints = [
       "A fresco on the Sistine Chapel ceiling showing God giving life to Adam with a near-touch.",
   },
   {
-    id: 9,
+    id: 8,
     title: "The Garden of Earthly Delights",
     author: "Hieronymus Bosch",
     imageUrl:
@@ -99,7 +99,7 @@ const Paints = [
       "A triptych depicting paradise, earthly pleasures, and hell with rich symbolic imagery.",
   },
   {
-    id: 10,
+    id: 9,
     title: "The Last Supper",
     author: "Leonardo da Vinci",
     imageUrl:
@@ -110,4 +110,4 @@ const Paints = [
       "Depiction of Jesus and his apostles at the moment he reveals his upcoming betrayal.",
   },
 ];
-export default Paints;
+export default paints;

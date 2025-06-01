@@ -4,6 +4,7 @@ import Layout from "./Components/Layout";
 import Catalog from "./Components/Catalog";
 import Paint from "./Components/Paint";
 import Error from "./Components/Error";
+import ArtStyle from "./Components/ArtStyle";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />}></Route>
             <Route path="/Catalog" element={<Catalog />}></Route>
-            <Route path="/Catalog/:id" element={<Paint />}></Route>
+            <Route path="/Catalog/:id" element={<ArtStyle />}></Route>
+            <Route path="/Paint/:id" element={<Paint />}></Route>
             <Route path="/*" element={<Error />}></Route>
           </Route>
         </Routes>

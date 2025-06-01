@@ -15,7 +15,7 @@ function NavBar() {
               <Link to={"/"}>The Art Store</Link>
             </li>
             <li className=" block text-right">
-              <Link to={"/"}>Sorprise Me</Link>
+              <Link to={"/"}>Surprise Me</Link>
             </li>
           </ul>
         </nav>

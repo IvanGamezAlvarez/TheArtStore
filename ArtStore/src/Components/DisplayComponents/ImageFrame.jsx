@@ -1,9 +1,17 @@
 import React from "react";
-
-function ImageFrame({ item }) {
+import { Link } from "react-router-dom";
+function ImageFrame({ item, id }) {
   return (
-    <div className=" h-full w-full">
-      <img className="h-full w-full object-cover" src={item.imageUrl}></img>
+    <div className=" h-96 w-full bg-amber-50">
+      <Link to={`/Paint/${id}`}>
+        <h2 className=" absolute my-12 mx-12   inline font-bold    text-amber-50  ">
+          {item.title}
+        </h2>
+        <img
+          className="h-full w-full object-cover object-center"
+          src={item.imageUrl}
+        ></img>
+      </Link>
     </div>
   );
 }
