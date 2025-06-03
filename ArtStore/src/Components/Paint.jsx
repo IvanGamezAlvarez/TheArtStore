@@ -11,11 +11,15 @@ function Paint() {
 
   return (
     <>
-      <h2>{PaintToShow.title}</h2>
-      <img src={PaintToShow.imageUrl} className="  h-96" />
-      <h3>Description:</h3>
-      <p>{PaintToShow.description}</p>
-      <h2>Value: {PaintToShow.value}</h2>
+      <div className=" flex justify-center gap-5">
+      <img src={PaintToShow.imageUrl} alt={PaintToShow.title} className="   h-96" />
+        <div className=" text-amber-50">
+          <h2 className=" text-3xl font-bold">{PaintToShow.title}</h2>
+          <h3>Description:</h3>
+          <p>{PaintToShow.description}</p>
+          <h2>Value: {PaintToShow.value}</h2>
+        </div>
+      </div>
     </>
   );
 }

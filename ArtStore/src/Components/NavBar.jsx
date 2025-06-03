@@ -1,12 +1,21 @@
-import React from "react";
+import {React,useState } from "react";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+import paints from "../data/paintsData";
 
-function NavBar() {
-  return (
+function NavBar() 
+{
+
+  const {randomNumber, setRandomNumber} = useState(0)
+
+  const getARandomNummber = () =>{
+
+    setRandomNumber(Math.floor(Math.random() * paints.length))
+  }
+return (
     <>
-      <header className=" flex-1/2   h-aurto py-5 px-10  ">
-        <nav className="  text-amber-100 text-6xl font-bold   ">
+      <header className=" flex-1/2   h-aurto py-5 px-10   ">
+        <nav className="  text-amber-100 text-6xl font-bold  sticky ">
           <ul>
             <li className=" block">
               <Link to={"/Catalog"}> Artistic styles</Link>
@@ -15,7 +24,7 @@ function NavBar() {
               <Link to={"/"}>The Art Store</Link>
             </li>
             <li className=" block text-right">
-              <Link to={"/"}>Surprise Me</Link>
+              <Link to={`/Paint/${randomNumber}`} onClick={getARandomNummber}>Surprise Me</Link>
             </li>
           </ul>
         </nav>

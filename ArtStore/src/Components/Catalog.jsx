@@ -10,7 +10,7 @@ function Catalog() {
       <h2 className=" text-amber-50 font-bold text-2xl  text-center ">
         Art Styles:
       </h2>
-      <div className=" grid grid-cols-6 gap-2">
+      <div className=" grid grid-cols-5 gap-2">
         {artStylesData.map((item) => (
           <CategoryFrame key={item.id} item={item} id={item.name} />
         ))}

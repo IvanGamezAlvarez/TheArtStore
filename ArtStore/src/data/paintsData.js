@@ -48,7 +48,7 @@ const paints = [
     title: "Las Meninas",
     author: "Diego Velázquez",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/5/5f/Las_Meninas_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg/800px-Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg",
     artStyle: "Baroque",
     value: "$200,000,000",
     description:
@@ -70,7 +70,7 @@ const paints = [
     title: "The Birth of Venus",
     author: "Sandro Botticelli",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/1/1c/Birth_of_Venus_Botticelli.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/1920px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg",
     artStyle: "Renaissance",
     value: "$200,000,000",
     description:
@@ -81,7 +81,7 @@ const paints = [
     title: "The Creation of Adam",
     author: "Michelangelo",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/0/0e/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg/1920px-Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg",
     artStyle: "Renaissance",
     value: "$300,000,000",
     description:
@@ -92,7 +92,7 @@ const paints = [
     title: "The Garden of Earthly Delights",
     author: "Hieronymus Bosch",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/7/74/El_jard%C3%ADn_de_las_Delicias%2C_de_El_Bosco.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/The_Garden_of_earthly_delights.jpg/1920px-The_Garden_of_earthly_delights.jpg",
     artStyle: "Renaissance",
     value: "$150,000,000",
     description:
@@ -103,7 +103,7 @@ const paints = [
     title: "The Last Supper",
     author: "Leonardo da Vinci",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4b/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/1920px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg",
     artStyle: "Renaissance",
     value: "$450,000,000",
     description:

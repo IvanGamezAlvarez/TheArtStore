@@ -13,7 +13,7 @@ const artStylesData = [
     description:
       "A movement extending Impressionism while rejecting its limitations; more symbolic and structured.",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const artStylesData = [
     description:
       "Dramatic, detailed, and grand art style from the 17th century, emphasizing contrast and movement.",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/5/5f/Las_Meninas_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d7/Meisje_met_de_parel.jpg",
   },
   {
     id: 4,
