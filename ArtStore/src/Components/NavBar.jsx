@@ -1,4 +1,4 @@
-import {React,useState } from "react";
+
 import React, { useEffect, useState } from "react";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ function NavBar() {
               <Link to={"/"}>The Art Store</Link>
             </li>
             <li className=" block text-right">
-              <Link to={`/Paint/${randomNumber}`} onClick={getARandomNummber}>Surprise Me</Link>
+              <Link to={`/}`}>Surprise Me</Link>
             </li>
           </ul>
         </nav>
