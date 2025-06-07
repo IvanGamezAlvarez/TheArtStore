@@ -5,10 +5,8 @@ import ImagesDiplayer from "./DisplayComponents/ImagesDiplayer";
 
 function ArtStyle() {
   const { id } = useParams();
-  console.log(id);
 
   const PaintsToShow = Paints.filter((paint) => paint.artStyle === id);
-  console.log(PaintsToShow);
 
   return (
     <>

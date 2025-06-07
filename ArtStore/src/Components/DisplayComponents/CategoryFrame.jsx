@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function CategoryFrame({ item, id }) {
-  console.log(item.name);
   return (
     <div className=" h-full w-full">
       <Link to={`/Catalog/${id}`}>

@@ -6,6 +6,7 @@ import CartWidget from "./CartWidget";
 function Layout() {
   return (
     <>
+      <CartWidget></CartWidget>
       <NavBar />
       <Outlet />
     </>
