@@ -1,9 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useInView } from 'react-intersection-observer';
 
 function HotSaleSign() {
+
+ 
+
+  
   const [titlePosition, setTitlePosition] = useState(0);
 
   useEffect(() => {
+     const {h2Ref,inView } =useInView({
+      
+     })
     const scrollAnimation = () => {
       if (window.scrollY > 600 * 3) {
         setTitlePosition(300 * 2);
@@ -22,8 +30,10 @@ function HotSaleSign() {
   }, []);
   return (
     <h2
+      ref={h2Ref}
       className=" bg-black  text-amber-200  font-bold uppercase text-4xl"
       style={{ paddingLeft: titlePosition }}
+
     >
       Explore our Hot Sales
     </h2>

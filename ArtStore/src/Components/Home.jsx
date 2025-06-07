@@ -5,13 +5,16 @@ import Banner from "./DisplayComponents/Banner";
 import HotSaleSign from "./DisplayComponents/HotSaleSign";
 import StylesDisplayer from "./DisplayComponents/StylesDisplayer";
 function Home() {
-  const paintsToShow = Paints.slice(0, 30);
+  const paintsToShow = Paints.slice(0, 8);
+  const paintsToShowSecond = Paints.slice(9,16) 
 
   return (
     <>
       <Banner />
-      <HotSaleSign />
+    
       <ImagesDiplayer Paints={paintsToShow} />
+        <HotSaleSign />
+        <ImagesDiplayer Paints={paintsToShowSecond} />
       <StylesDisplayer />
     </>
   );
