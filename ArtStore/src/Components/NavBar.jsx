@@ -30,13 +30,13 @@ function NavBar() {
       >
         <nav className="  text-amber-100 text-6xl font-bold   ">
           <ul className="transition-all duration-300">
-            <li className=" block">
-              <Link to={"/Catalog"}> Artistic styles</Link>
+            <li className=" block hover:text-amber-50">
+              <Link to={"/Catalog "}> Artistic styles</Link>
             </li>
-            <li className=" block text-center text-9xl upper transition-transform duration-300">
+            <li className=" block text-center text-9xl upper transition-transform duration-300 hover:text-amber-50">
               <Link to={"/"}>The Art Store</Link>
             </li>
-            <li className=" block text-right">
+            <li className=" block text-right hover:text-amber-50 ">
               <Link to={`/}`}>Surprise Me</Link>
             </li>
           </ul>
