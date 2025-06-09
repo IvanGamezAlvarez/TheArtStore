@@ -8,7 +8,7 @@ function CategoryFrame({ item, id }) {
         <h2 className=" absolute my-12 mx-12   inline font-bold    text-amber-50  size-1 ">
           {item.name}
         </h2>
-        <img className="h-full w-full object-cover" src={item.imageUrl}></img>
+        <img className="h-8/10 w-full object-cover" src={item.imageUrl}></img>
         <p className="text-white">{item.description}</p>
       </Link>
     </div>
