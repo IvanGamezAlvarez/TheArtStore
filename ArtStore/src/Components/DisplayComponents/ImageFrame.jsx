@@ -3,18 +3,17 @@ import { Link } from "react-router-dom";
 
 function ImageFrame({ item, id }) {
   const imageFrame = useRef(null);
-  let backgroundSwicthColor = useRef(null);
 
   useEffect(() => {
-    const currentItem = imageFrame.current;
 
     const handleHover = () => {
+      imageFrame.className = 
       backgroundSwicthColor = "Black";
       console.log("entramo mi gente");
     };
-    currentItem.addEventListener("mouseover", handleHover);
+    imageFrame.current.addEventListener("mouseover", handleHover);
     return () => {
-      currentItem.removeEventListener("mouseover", handleHover);
+      imageFrame.current.removeEventListener("mouseover", handleHover);
     };
   }, []);
 
@@ -23,7 +22,7 @@ function ImageFrame({ item, id }) {
       <Link to={`/Paint/${id}`}>
         <div
           className="absolute h-full w-full  "
-          style={{ backgroundColor: backgroundSwicthColor }}
+          // style={{ backgroundColor: backgroundSwicthColor }}
         >
           <h2 className=" absolute  text-3xl right-1/2 top-1/2 translate-1/2 text-center font-bold    text-amber-50  ">
             {item.title}

@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import iconCart from "../assets/cart-icon-black.svg";
 import iconClose from "../assets/close-icon.svg";
+import { CartContext } from "../Contexts/CartContext";
 
 function CartWidget() {
+  const [cartMessage, setCartMessage] = useState("The cart is empty");
+  const [cartContent, setCartContentx] = useContext(CartContext);
   const [cartScren, setCartScreen] = useState(false);
 
   const handleCart = () => {
@@ -32,8 +35,8 @@ function CartWidget() {
         >
           <img src={iconClose} className=" size-10 m-auto "></img>
         </button>
-        <h2 className=" block">In your cart:</h2>
-        <h3>Total:</h3>
+
+        <h2 className=" block font-bold text-2xl text-center">{cartMessage}</h2>
       </div>
     </>
   );

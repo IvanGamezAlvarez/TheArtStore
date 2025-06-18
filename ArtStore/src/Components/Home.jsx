@@ -12,7 +12,7 @@ function Home() {
     <>
       <Banner />
     
-        <HotSaleSign />
+          {/* <HotSaleSign /> */}
       <ImagesDiplayer Paints={paintsToShow} />
         <ImagesDiplayer Paints={paintsToShowSecond} />
       <StylesDisplayer />

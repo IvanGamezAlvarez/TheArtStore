@@ -10,13 +10,17 @@ function Paint() {
 
   return (
     <>
-      <div className=" flex justify-center gap-5  h-150">
+      <div className=" flex justify-center gap-5   h-150 m-10">
+        <div className="h-full w-1/2 bg-gray-900 ">
         <img
+        
           src={PaintToShow.imageUrl}
           alt={PaintToShow.title}
-          className="   h-full"
+          className=" p-1  object-contain   h-full m-auto   "
         />
-        <div className=" px-10 text-amber-50">
+        </div>
+    
+        <div className=" px-10 text-amber-50  w-1/2">
           <Link
             to={`/Catalog/${PaintToShow.artStyle}`}
             className=" mt-10 text-2xl"
