@@ -4,7 +4,7 @@ import iconClose from "../assets/close-icon.svg";
 import { CartContext } from "../Contexts/CartContext";
 
 function CartWidget() {
-  const [cartMessage, setCartMessage] = useState("The cart is empty");
+
   const [cartContent, setCartContentx] = useContext(CartContext);
   const [cartScren, setCartScreen] = useState(false);
 
@@ -35,8 +35,10 @@ function CartWidget() {
         >
           <img src={iconClose} className=" size-10 m-auto "></img>
         </button>
+        {console.log(cartContent)}
+        {cartContent.lenght ===0 && <h2 className=" block font-bold text-2xl text-center">The cart is empty</h2>}
+        {cartContent.lenght > 0 &&  <h2>mostrando algo</h2>}
 
-        <h2 className=" block font-bold text-2xl text-center">{cartMessage}</h2>
       </div>
     </>
   );

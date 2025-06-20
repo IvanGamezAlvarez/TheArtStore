@@ -30,7 +30,7 @@ function ImageFrame({ item, id }) {
         </div>
 
         <img
-          className="h-full w-full object-cover object-center"
+          className="h-full w-full object-fill object-center"
           src={item.imageUrl}
         ></img>
       </Link>
