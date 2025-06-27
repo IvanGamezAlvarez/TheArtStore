@@ -6,9 +6,18 @@ import Paint from "./Components/Paint";
 import Error from "./Components/Error";
 import ArtStyle from "./Components/ArtStyle";
 import { CartProvider } from "./Contexts/CartContext";
+// import { useEffect, useState } from "react";
+// import { getFirestore } from "firebase/firestore";
+
+// const [paintsData, setPaintsData] = useState({});
+
+// const db = getFirestore();
+
+// useEffect(() => {}, []);
 
 function App() {
-  return (    <>
+  return (
+    <>
       <CartProvider>
         <BrowserRouter>
           <Routes>
@@ -17,6 +26,7 @@ function App() {
               <Route path="/Catalog" element={<Catalog />}></Route>
               <Route path="/Catalog/:id" element={<ArtStyle />}></Route>
               <Route path="/Paint/:id" element={<Paint />}></Route>
+              {/* <Route path="/Admin" element={<Admin />}></Route> */}
               <Route path="/*" element={<Error />}></Route>
             </Route>
           </Routes>

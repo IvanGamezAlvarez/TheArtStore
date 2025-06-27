@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ImagesDiplayer from "./DisplayComponents/ImagesDiplayer";
-import Paints from "./../data/paintsData";
+// import Paints from "./../data/paintsData";
 import Banner from "./DisplayComponents/Banner";
 import HotSaleSign from "./DisplayComponents/HotSaleSign";
 import StylesDisplayer from "./DisplayComponents/StylesDisplayer";
+import { getPaintsData } from "../firebase";
 function Home() {
-  const paintsToShow = Paints.slice(0, 8);
-  const paintsToShowSecond = Paints.slice(9,17) 
+  const [paints, setPaints] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const dataaa = await getPaintsData();
+      console.log(dataaa);
+      await setPaints(dataaa);
+    };
+
+    getData();
+  }, []);
+
+  // const paintsToShow = paints.slice(0, 8);
+  //const paintsToShowSecond = paints.slice(9, 17);
 
   return (
     <>
       <Banner />
-    
-          {/* <HotSaleSign /> */}
-      <ImagesDiplayer Paints={paintsToShow} />
-        <ImagesDiplayer Paints={paintsToShowSecond} />
+      {/* <HotSaleSign /> */}
+      <ImagesDiplayer Paints={paints} />
       <StylesDisplayer />
     </>
   );

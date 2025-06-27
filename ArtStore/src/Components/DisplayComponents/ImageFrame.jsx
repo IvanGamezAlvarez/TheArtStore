@@ -1,36 +1,49 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 function ImageFrame({ item, id }) {
-  const imageFrame = useRef(null);
+  const [hover, setHover] = useState(false);
+  // const imageFrame = useRef(null);
 
-  useEffect(() => {
-
-    const handleHover = () => {
-      imageFrame.className = 
-      backgroundSwicthColor = "Black";
-      console.log("entramo mi gente");
-    };
-    imageFrame.current.addEventListener("mouseover", handleHover);
-    return () => {
-      imageFrame.current.removeEventListener("mouseover", handleHover);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const node = imageFrame.current;
+  //   if (!node) return;
+  //   const handleHover = () => {
+  //     setHover(true);
+  //   };
+  //   node.addEventListener("mouseover", handleHover);
+  //   return () => {
+  //     node.removeEventListener("mouseover", handleHover);
+  //   };
+  // }, []);
 
   return (
-    <div ref={imageFrame} className="relative h-130 w-full bg-amber-50">
+    <div
+      className="relative h-130 w-full bg-amber-50"
+      onMouseEnter={() => {
+        setHover(true);
+      }}
+      onMouseLeave={() => {
+        setHover(false);
+      }}
+    >
       <Link to={`/Paint/${id}`}>
-        <div
-          className="absolute h-full w-full  "
-          // style={{ backgroundColor: backgroundSwicthColor }}
-        >
-          <h2 className=" absolute  text-3xl right-1/2 top-1/2 translate-1/2 text-center font-bold    text-amber-50  ">
-            {item.title}
-          </h2>
-        </div>
+        {hover ? (
+          <div className="absolute h-full w-full bg-slate-900/70 transition-all duration-300   ">
+            <h2 className=" absolute  text-3xl right-1/2 top-1/2 translate-1/2 text-center font-bold    text-amber-50  ">
+              {item.title}
+            </h2>
+          </div>
+        ) : (
+          <div className="absolute h-full w-full  transition-all duration-300 ">
+            <h2 className=" absolute  text-3xl right-1/2 top-1/2 translate-1/2 text-center font-bold    text-amber-50 opacity-0 ">
+              {item.title}
+            </h2>
+          </div>
+        )}
 
         <img
-          className="h-full w-full object-fill object-center"
+          className="h-full w-full object-cover object-center"
           src={item.imageUrl}
         ></img>
       </Link>

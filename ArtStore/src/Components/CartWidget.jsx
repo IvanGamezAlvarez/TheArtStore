@@ -2,10 +2,10 @@ import React, { useContext, useState } from "react";
 import iconCart from "../assets/cart-icon-black.svg";
 import iconClose from "../assets/close-icon.svg";
 import { CartContext } from "../Contexts/CartContext";
+import CartItem from "./DisplayComponents/CartItem";
 
 function CartWidget() {
-
-  const [cartContent, setCartContentx] = useContext(CartContext);
+  const [cartContent, setCartContent] = useContext(CartContext);
   const [cartScren, setCartScreen] = useState(false);
 
   const handleCart = () => {
@@ -35,10 +35,9 @@ function CartWidget() {
         >
           <img src={iconClose} className=" size-10 m-auto "></img>
         </button>
-        {console.log(cartContent)}
-        {cartContent.lenght ===0 && <h2 className=" block font-bold text-2xl text-center">The cart is empty</h2>}
-        {cartContent.lenght > 0 &&  <h2>mostrando algo</h2>}
-
+        {cartContent.map((item) => (
+          <CartItem key={item.id} item={item} />
+        ))}
       </div>
     </>
   );
