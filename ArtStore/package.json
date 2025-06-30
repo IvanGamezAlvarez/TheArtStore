@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.1.6",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
+    "firebase": "^11.10.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-intersection-observer": "^9.16.0",

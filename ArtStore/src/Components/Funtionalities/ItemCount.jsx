@@ -6,14 +6,14 @@ function ItemCount() {
   const [amountToAdd, setAmountToAdd] = useState(0);
 
   const addAmout = (i) => {
-    if (cartContent) console.log("le etamo llamando loco");
+    if (cartContent ===0 && i<0) {return};
     const newAmount = amountToAdd + i;
     setAmountToAdd(newAmount);
     console.log(cartContent);
   };
 
   const addToTheCart = () => {
-    addToCart([]);
+    setAmountToAdd(0)
   };
   return (
     <div className=" text-black ">

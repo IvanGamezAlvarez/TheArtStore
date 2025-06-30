@@ -1,14 +1,24 @@
-import React, { useEffect, useState } from "react";
-import CartWidget from "./CartWidget";
+import React, { use, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import paints from "../data/paintsData";
+
 
 function NavBar() {
   const [navScrolled, setNavScrolled] = useState(false);
 
+  const [surpriseNumber, setSurpirseNumber] = useState()
+
+
+
+  // const getARandomNumber = () =>{
+  //   const randomNumber = Math.floor(Math.random() * 10  )
+  //   setSurpirseNumber(randomNumber)
+  // }
+
+
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 250) {
+      if (window.scrollY > 300) {
         setNavScrolled(true);
       } else if (window.scrollY < 1) {
         setNavScrolled(false);
