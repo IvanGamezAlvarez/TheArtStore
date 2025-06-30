@@ -10,9 +10,9 @@ function Home() {
 
   useEffect(() => {
     const getData = async () => {
-      const dataaa = await getPaintsData();
-      console.log(dataaa);
-      await setPaints(dataaa);
+      const data = await getPaintsData();
+      console.log(data);
+      await setPaints(data);
     };
 
     getData();

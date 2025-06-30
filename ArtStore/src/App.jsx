@@ -5,7 +5,9 @@ import Catalog from "./Components/Catalog";
 import Paint from "./Components/Paint";
 import Error from "./Components/Error";
 import ArtStyle from "./Components/ArtStyle";
+
 import { CartProvider } from "./Contexts/CartContext";
+// import Admin from "./Components/Admin";
 // import { useEffect, useState } from "react";
 // import { getFirestore } from "firebase/firestore";
 

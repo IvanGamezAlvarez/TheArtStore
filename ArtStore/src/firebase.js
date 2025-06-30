@@ -11,3 +11,15 @@ export const getPaintsData = async () => {
   }));
   return paintList;
 };
+
+export const getArtSylesData = async () => {
+  const db = getFirestore();
+
+  const StylesCollection = collection(db, "ArtStyles");
+  const querySnapshot = await getDocs(StylesCollection);
+  const styleList = querySnapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+  return styleList;
+};

@@ -1,53 +1,70 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import Paints from "../data/paintsData";
-import { CartContext } from "../Contexts/CartContext";
+import { getPaintsData } from "../firebase";
+import ItemCount from "./Funtionalities/ItemCount";
 
 function Paint() {
-  const [cartContent, setCartContent, addToCart] = useContext(CartContext);
   const { id } = useParams();
+  const [paints, setPaints] = useState([]);
 
-  const PaintToShow = Paints.find((paint) => paint.id === Number(id));
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getPaintsData();
+      await setPaints(data);
+    };
 
-  const handleButton = () => {
-    addToCart([PaintToShow]);
-  };
+    getData();
+  }, []);
+
+  const paintToShow = paints.find((paint) => paint.id === Number(id));
+
+  console.log(paints);
+  console.log(paintToShow);
 
   return (
     <>
-      <div className=" flex justify-center gap-5   h-150 m-10">
-        <div className="h-full w-1/2 bg-gray-900 ">
-          <img
-            src={PaintToShow.imageUrl}
-            alt={PaintToShow.title}
-            className=" p-1  object-contain   h-full m-auto   "
-          />
+      {paintToShow ? (
+        <div className=" flex justify-center gap-5   h-150 m-10">
+          <div className="h-full w-1/2  ">
+            <img
+              src={paintToShow.imageUrl}
+              alt={paintToShow.title}
+              className=" p-1  object-contain   h-full m-auto   "
+            />
+          </div>
+
+          <div className=" px-10 text-amber-50  w-1/2">
+            <Link
+              to={`/Catalog/${paintToShow.artStyle}`}
+              className=" mt-10 text-2xl underline"
+            >
+              {paintToShow.artStyle}
+            </Link>
+            <h2 className=" text-3xl font-bold my-2 p-0">
+              {paintToShow.title}
+            </h2>
+            <p className=" w-100">{paintToShow.description}</p>
+            <h3 className=" font-bold mt-20"> Price:</h3>
+            <h2> {paintToShow.value}.00$</h2>
+
+            <h3 className=" font-bold"> Author:</h3>
+            <p>{paintToShow.author}</p>
+
+            <ItemCount />
+          </div>
         </div>
-
-        <div className=" px-10 text-amber-50  w-1/2">
-          <Link
-            to={`/Catalog/${PaintToShow.artStyle}`}
-            className=" mt-10 text-2xl"
-          >
-            {PaintToShow.artStyle}
-          </Link>
-          <h2 className=" text-3xl font-bold m-0 p-0">{PaintToShow.title}</h2>
-          <p className=" w-100">{PaintToShow.description}</p>
-          <h3 className=" font-bold"> Price:</h3>
-          <h2> {PaintToShow.value}.00</h2>
-
-          <h3 className=" font-bold"> Author:</h3>
-          <p>{PaintToShow.author}</p>
-
-          <button
-            onClick={handleButton}
-            className="mt-0 bottom-0 bg-amber-100 p-2 font-bold text-black"
-          >
-            Add to the cart
-          </button>
+      ) : (
+        <div>
+          <h2 className=" text-center text-3xl m-6 text-amber-50 font-semibold ">
+            Loading...
+          </h2>
+          <p className=" text-center text-amber-50 text-xl ">
+            If the loading does not finish, it is possible that the URL does not
+            exist yet.
+          </p>
         </div>
-      </div>
+      )}
     </>
   );
 }
