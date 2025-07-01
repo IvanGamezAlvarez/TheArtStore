@@ -19,9 +19,6 @@ function Paint() {
 
   const paintToShow = paints.find((paint) => paint.id === Number(id));
 
-  console.log(paints);
-  console.log(paintToShow);
-
   return (
     <>
       {paintToShow ? (
@@ -34,7 +31,7 @@ function Paint() {
             />
           </div>
 
-          <div className=" px-10 text-amber-50  w-1/2">
+          <div className=" px-10 text-amber-50 mt-10  w-1/2">
             <Link
               to={`/Catalog/${paintToShow.artStyle}`}
               className=" mt-10 text-2xl underline"
@@ -45,13 +42,13 @@ function Paint() {
               {paintToShow.title}
             </h2>
             <p className=" w-100">{paintToShow.description}</p>
-            <h3 className=" font-bold mt-20"> Price:</h3>
+            <h3 className=" font-bold mt-60"> Price:</h3>
             <h2> {paintToShow.value}.00$</h2>
 
             <h3 className=" font-bold"> Author:</h3>
             <p>{paintToShow.author}</p>
 
-            <ItemCount />
+            <ItemCount key={paintToShow.id} itemId={paintToShow.id} />
           </div>
         </div>
       ) : (

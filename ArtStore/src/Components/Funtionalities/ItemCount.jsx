@@ -1,19 +1,25 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../Contexts/CartContext";
 
-function ItemCount() {
+function ItemCount({ itemId }) {
   const [cartContent, setCartContent, addToCart] = useContext(CartContext);
   const [amountToAdd, setAmountToAdd] = useState(0);
 
   const addAmout = (i) => {
-    if (cartContent ===0 && i<0) {return};
+    if (amountToAdd === 0 && i < 0) {
+      return;
+    }
     const newAmount = amountToAdd + i;
     setAmountToAdd(newAmount);
-    console.log(cartContent);
   };
 
   const addToTheCart = () => {
-    setAmountToAdd(0)
+    let amount = amountToAdd;
+    if (amountToAdd <= 0) {
+      amount = 1;
+    }
+    addToCart(itemId, amount);
+    setAmountToAdd(0);
   };
   return (
     <div className=" text-black ">

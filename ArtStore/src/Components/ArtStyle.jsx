@@ -10,8 +10,12 @@ function ArtStyle() {
 
   return (
     <>
-      <h2 className=" text-amber-50 font-bold text-4xl text-center m-20">{id}</h2>
-      <ImagesDiplayer Paints={PaintsToShow} />
+      <h2 className=" text-amber-50 font-bold text-4xl text-center m-20">
+        {id}
+      </h2>
+      <div className=" bg-gray-200">
+        <ImagesDiplayer Paints={PaintsToShow} />
+      </div>
     </>
   );
 }
