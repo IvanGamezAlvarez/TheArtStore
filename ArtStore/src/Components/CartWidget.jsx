@@ -6,28 +6,26 @@ import CartItem from "./DisplayComponents/CartItem";
 import UsePaints from "../hooks/UsePaints";
 
 function CartWidget() {
-  const paints = UsePaints();
+  const { paints } = UsePaints();
   const [cartContent, setCartContent] = useContext(CartContext);
   const [cartScren, setCartScreen] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
 
   useEffect(() => {
-    console.log("renderizando");
-    const UpdateCart = () => {
-      if (paints.length > 0) {
-        console.log("entrando");
-        let total = 0;
-
-        cartContent.forEach((element) => {
-          const paint = paints.find((paint) => paint.id === Number(element.id));
-          const totalItem = paint.value * element.amount;
-          total = total + totalItem;
-        });
-        setCartTotal(total);
-      }
-    };
-
-    UpdateCart();
+    let total = 0;
+    console.log("agregando andammos");
+    console.log(paints);
+    console.log(cartContent);
+    if (paints.length > 0 && cartContent.length > 0) {
+      console.log("we can join");
+      cartContent.forEach((element) => {
+        const paint = paints.find((paint) => paint.id === Number(element.id));
+        if (paint) {
+          total += paint.value * element.amount;
+        }
+      });
+    }
+    setCartTotal(total);
   }, [cartContent, paints]);
 
   const handleCart = () => {
@@ -64,9 +62,12 @@ function CartWidget() {
           {cartContent.map((item) => (
             <CartItem key={item.id} item={item} />
           ))}
-          <hr className="my-2 border-2" />
-          <h3 className="font-bold text-2xl mx-10">Your Total: {cartTotal}</h3>
-          <button className=" font-semibold  bg-indigo-500 text-amber-50 p-3 rounded-3xl mx-auto">
+          <hr className="my-2 border-1 border-slate-300" />
+          <h3 className="font-bold text-2xl mx-10">
+            Your Total: ${cartTotal}.00
+          </h3>
+
+          <button className=" block font-semibol bg-amber-400 font-bold text-amber-50 p-3 rounded-3xl mx-auto my-2">
             Check Out
           </button>
         </div>
