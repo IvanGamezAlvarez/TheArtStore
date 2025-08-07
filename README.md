@@ -21,12 +21,11 @@
 **Frontend:**  
 - [React](https://react.dev/)  
 - [React Router](https://reactrouter.com/)  
-- [Tailwind CSS](https://tailwindcss.com/) *(optional if you used it)*
+- [Tailwind CSS](https://tailwindcss.com/) 
 
 **Backend:**  
-- [Firebase Authentication](https://firebase.google.com/docs/auth)  
-- [Firebase Firestore](https://firebase.google.com/docs/firestore)  
-- [Firebase Hosting](https://firebase.google.com/docs/hosting)
+- [Firebase Firestore] 
+- [Firebase Hosting]
 
 ---
 
