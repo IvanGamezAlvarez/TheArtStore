@@ -32,7 +32,10 @@
 
 ## 📦 Installation & Setup
 
-1. **Clone the repository**
+ **Clone the repository**
    ```bash
    git clone https://github.com/your-username/the-art-store.git
    cd the-art-store
+   npm install
+   npm run build
+
